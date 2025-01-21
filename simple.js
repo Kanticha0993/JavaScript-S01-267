@@ -1,5 +1,9 @@
 const numbers = [1,3,8,4,6,9,10,23,];
 
+function line (num){
+    console.log('-'.repeat(num));
+}
+
 //หาค่ามากสุด
 function findMax (arr){
     if(arr.length === 0){
@@ -13,7 +17,6 @@ function findMax (arr){
     }
     return max;
 }
-console.log(findMax(numbers));
 
 //หาค่าน้อยที่สุด
 function findMin (arr){
@@ -29,7 +32,6 @@ function findMin (arr){
     }
     return min;
 }
-console.log(findMin(numbers));
 
 //ตรวจเลขคู่เลขคี่
 const nums = 42 ;
@@ -41,8 +43,6 @@ function checkEven (num){
     }
 }
     
-console.log(checkEven(nums));
-
 //หาผลรวมเลขในอาร์เรย์
 let arrays = [1,2,3,4];
 function sumArray(arr){
@@ -52,37 +52,22 @@ function sumArray(arr){
     }
     return sum;
 }
-console.log(sumArray(arrays));
 
 //หาจำนวนเฉพาะ
+let isnums = 1;
 function isPrime(isnum){
-    //let isnum = 24
     if (isnum <= 0){
-        return false;
+        return "Not prime number";
     }
     for(let i = 2 ;i < isnum ; i++){
         if(isnum % 1 === 0){
-            return false;
+            return "Not prime number";
         }
     }
 
-    return true;
+    return "Is prime number";
 }
 
-console.log(isPrime(24));
-
-//การสร้างตัวอักษรตามรูปแบบที่กำหนด (Pattern)
-function printPattern(n) {
-    for (let i = 1; i <= n; i++) {
-        let row = '';
-        for (let j = 0; j < i; j++) {
-            row += '*';
-        }
-        console.log(row);
-    }
-}
-
-printPattern(5); 
 
 //การหาค่ามัธยฐาน (Median) ของอาร์เรย์
 let numberss = [7, 2, 9, 4, 5];
@@ -96,14 +81,32 @@ function median(arr) {
         return arr[middle];
     }
 }
-console.log(median(numberss));
 
 //การสร้างอาร์เรย์จากค่าที่รับเข้ามา
+let n = 10;
 function creatArray(n){
     let arr = [];
     for(let i = 1 ; i <= n ;i++){
         arr.push(i)
     }
-    return arr
+    return arr;
 }
-console.log(creatArray(10));
+
+console.log('-'.repeat(15)+ "Simple JS" + '-'.repeat(15));
+line(40);
+console.log("Data is: " + numbers);
+line(40);
+console.log("1.FindMax of "+ numbers+ " is: " + findMax(numbers));
+line(40);
+console.log("2.FindMin of " + numbers + " is: " +findMin(numbers));
+line(40);
+console.log("3.CheckEven of " + nums + " is: " +checkEven(nums));
+line(40);
+console.log("4.sumArray of " + arrays + " is: " + sumArray(arrays));
+line(40);
+console.log("5.IsPrime of " +  isnums + " is: " + isPrime(isnums));
+line(40);
+console.log("6.Median of " + numberss + "is: " +median(numberss));
+line(47);
+console.log("7.CreatArray of " + n +" is: " + "[ " + creatArray(n) + " ]");
+line(47);
